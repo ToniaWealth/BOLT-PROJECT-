@@ -6,17 +6,17 @@
 
 export const hotelConfig = {
   // ---- Brand & Identity ----
-  name: "Aurelia",
+  name: "ProlificWealth",
   tagline: "Where Stillness Meets the Sea",
-  logoText: "AURELIA",
+  logoText: "PROLIFICWEALTH",
   logoSubtext: "RESORT & SPA",
 
   // ---- Contact ----
   contact: {
-    phone: "+1 (305) 555-0198",
-    phoneRaw: "+13055550198",
-    email: "reservations@aureliaresort.com",
-    whatsappNumber: "13055550198",
+    phone: "+234 704 858 8134",
+    phoneRaw: "+2347048588134",
+    email: "prolificmemecoins@gmail.com",
+    whatsappNumber: "2347048588134",
     address: {
       line1: "1200 Ocean Crest Drive",
       line2: "Key Largo, FL 33037",
@@ -41,7 +41,7 @@ export const hotelConfig = {
     videoUrl:
       "https://assets.mixkit.co/videos/preview/mixkit-illuminated-hotel-pool-at-night-22620-large.mp4",
     fallbackImage:
-      "/images/hotels/new-hotel/1.jpg",
+      "https://images.pexels.com/photos/3011575/pexels-photo-3011575.jpeg?auto=compress&cs=tinysrgb&w=1920",
     headline: "Where Stillness Meets the Sea",
     subtext:
       "A secluded oceanfront sanctuary on the Florida Keys — designed for those who travel to disappear, not to be seen.",
@@ -62,7 +62,7 @@ export const hotelConfig = {
       size: "750 sq ft",
       bed: "King Bed",
       image:
-        "/images/hotels/new-hotel/pexels-sureshasam750-18368842.jpg",
+        "https://images.pexels.com/photos/97083/pexels-photo-97083.jpeg?auto=compress&cs=tinysrgb&w=1260",
       amenities: [
         "Private ocean-view balcony",
         "Marble soaking tub",
@@ -82,7 +82,7 @@ export const hotelConfig = {
       size: "1,200 sq ft",
       bed: "Two Queen Beds",
       image:
-        "/images/hotels/new-hotel/pexels-reyd-valencia-2159301653-37797447_(1).jpg",
+        "https://images.pexels.com/photos/6434592/pexels-photo-6434592.jpeg?auto=compress&cs=tinysrgb&w=1260",
       amenities: [
         "Private plunge pool",
         "Outdoor rainfall shower",
@@ -102,7 +102,7 @@ export const hotelConfig = {
       size: "450 sq ft",
       bed: "Queen Bed",
       image:
-        "/images/hotels/new-hotel/marina-nazina-X0JT2EYZFJg-unsplash.jpg",
+        "https://images.pexels.com/photos/2736384/pexels-photo-2736384.jpeg?auto=compress&cs=tinysrgb&w=1260",
       amenities: [
         "Sunset-facing window",
         "Rain shower",
@@ -122,7 +122,7 @@ export const hotelConfig = {
       size: "2,000 sq ft",
       bed: "King + Two Singles",
       image:
-        "/images/hotels/new-hotel/1.jpg",
+        "https://images.pexels.com/photos/8082217/pexels-photo-8082217.jpeg?auto=compress&cs=tinysrgb&w=1260",
       amenities: [
         "360° rooftop terrace",
         "Dedicated butler",
@@ -216,42 +216,42 @@ export const hotelConfig = {
   // ---- Gallery ----
   gallery: [
     {
-      src: "/images/hotels/new-hotel/1.jpg",
+      src: "https://images.pexels.com/photos/3011575/pexels-photo-3011575.jpeg?auto=compress&cs=tinysrgb&w=1260",
       alt: "Aerial view of luxury resort surrounded by lush greenery and ocean",
       span: "wide",
     },
     {
-      src: "/images/hotels/new-hotel/pexels-reyd-valencia-2159301653-37797447_(1).jpg",
+      src: "https://images.pexels.com/photos/14841129/pexels-photo-14841129.jpeg?auto=compress&cs=tinysrgb&w=1260",
       alt: "Grand hotel lobby with staircase, marble floors, and chandelier",
       span: "tall",
     },
     {
-      src: "/images/hotels/new-hotel/pexels-sureshasam750-18368842.jpg",
+      src: "https://images.pexels.com/photos/2259226/pexels-photo-2259226.jpeg?auto=compress&cs=tinysrgb&w=1260",
       alt: "Luxurious poolside cabana at a hillside resort",
       span: "normal",
     },
     {
-      src: "/images/hotels/new-hotel/marina-nazina-X0JT2EYZFJg-unsplash.jpg",
+      src: "https://images.pexels.com/photos/24433378/pexels-photo-24433378.jpeg?auto=compress&cs=tinysrgb&w=1260",
       alt: "Romantic fine dining table setting with candlelight",
       span: "normal",
     },
     {
-      src: "/images/hotels/new-hotel/pexels-reyd-valencia-2159301653-37797447_(1).jpg",
+      src: "https://images.pexels.com/photos/9119740/pexels-photo-9119740.jpeg?auto=compress&cs=tinysrgb&w=1260",
       alt: "Modern luxury fitness center with equipment and city views",
       span: "normal",
     },
     {
-      src: "/images/hotels/new-hotel/1.jpg",
+      src: "https://images.pexels.com/photos/9119622/pexels-photo-9119622.jpeg?auto=compress&cs=tinysrgb&w=1260",
       alt: "Tropical beach at twilight with illuminated palm trees",
       span: "wide",
     },
     {
-      src: "/images/hotels/new-hotel/marina-nazina-X0JT2EYZFJg-unsplash.jpg",
+      src: "https://images.pexels.com/photos/17057034/pexels-photo-17057034.jpeg?auto=compress&cs=tinysrgb&w=1260",
       alt: "Luxurious breakfast scene with fresh pastries and coffee",
       span: "normal",
     },
     {
-      src: "/images/hotels/new-hotel/pexels-sureshasam750-18368842.jpg",
+      src: "https://images.pexels.com/photos/37719540/pexels-photo-37719540.jpeg?auto=compress&cs=tinysrgb&w=1260",
       alt: "Elegant spa interior with massage table and calming ambiance",
       span: "tall",
     },
@@ -263,7 +263,7 @@ export const hotelConfig = {
       name: "Eleanor Whitfield",
       location: "London, UK",
       avatar:
-        "/images/hotels/new-hotel/marina-nazina-X0JT2EYZFJg-unsplash.jpg",
+        "https://images.pexels.com/photos/33680700/pexels-photo-33680700.jpeg?auto=compress&cs=tinysrgb&w=200",
       rating: 5,
       text: "The most tranquil five days of our year. The Ocean Crest Suite felt like a private home above the sea. Every detail — from the turndown service to the morning coffee on the balcony — was effortless.",
     },
@@ -271,15 +271,15 @@ export const hotelConfig = {
       name: "Marcus Delgado",
       location: "Buenos Aires, AR",
       avatar:
-        "/images/hotels/new-hotel/pexels-reyd-valencia-2159301653-37797447_(1).jpg",
+        "https://images.pexels.com/photos/5308640/pexels-photo-5308640.jpeg?auto=compress&cs=tinysrgb&w=200",
       rating: 5,
-      text: "We've stayed at resorts across three continents. Aurelia is the first place where the service felt invisible yet perfect. The spa alone is worth the trip — I left feeling ten years younger.",
+      text: "We've stayed at resorts across three continents. ProlificWealth is the first place where the service felt invisible yet perfect. The spa alone is worth the trip — I left feeling ten years younger.",
     },
     {
       name: "Priya Nair",
       location: "Mumbai, IN",
       avatar:
-        "/images/hotels/new-hotel/pexels-sureshasam750-18368842.jpg",
+        "https://images.pexels.com/photos/38740728/pexels-photo-38740728.jpeg?auto=compress&cs=tinysrgb&w=200",
       rating: 5,
       text: "The Garden Villa with its private plunge pool was beyond anything we imagined. Our kids still talk about the beach path every morning. This is what a family vacation should feel like.",
     },
@@ -289,8 +289,8 @@ export const hotelConfig = {
   about: {
     title: "A Sanctuary Built on Stillness",
     paragraphs: [
-      "Aurelia was born from a simple idea: that true luxury is not about what is added, but what is removed — the noise, the rush, the pressure to be anywhere other than here.",
-      "Nestled on seven acres of protected oceanfront on Key Largo, every corner of Aurelia was designed by award-winning architects to dissolve the boundary between indoors and the natural world. Floor-to-ceiling glass, sustainably sourced stone, and native tropical gardens create a space that breathes.",
+      "ProlificWealth was born from a simple idea: that true luxury is not about what is added, but what is removed — the noise, the rush, the pressure to be anywhere other than here.",
+      "Nestled on seven acres of protected oceanfront on Key Largo, every corner of ProlificWealth was designed by award-winning architects to dissolve the boundary between indoors and the natural world. Floor-to-ceiling glass, sustainably sourced stone, and native tropical gardens create a space that breathes.",
       "Our team of 120 hospitality professionals — many with us since opening — are trained to anticipate, not intrude. From the moment you arrive, your only task is to be still.",
     ],
     stats: [
@@ -300,7 +300,7 @@ export const hotelConfig = {
       { value: "4.9", label: "Guest Rating" },
     ],
     image:
-      "/images/hotels/new-hotel/1.jpg",
+      "https://images.pexels.com/photos/2771935/pexels-photo-2771935.jpeg?auto=compress&cs=tinysrgb&w=1260",
   },
 
   // ---- FAQ ----
@@ -328,7 +328,7 @@ export const hotelConfig = {
     {
       question: "Are pets allowed?",
       answer:
-        "Yes, Aurelia is a pet-friendly resort. Well-behaved pets are welcome in select room types with a one-time pet fee of $150, which includes a pet bed, bowls, and a welcome treat.",
+        "Yes, ProlificWealth is a pet-friendly resort. Well-behaved pets are welcome in select room types with a one-time pet fee of $150, which includes a pet bed, bowls, and a welcome treat.",
     },
     {
       question: "Is the spa open to non-guests?",
