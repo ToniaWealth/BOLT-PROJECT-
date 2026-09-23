@@ -41,7 +41,7 @@ export const hotelConfig = {
     videoUrl:
       "https://assets.mixkit.co/videos/preview/mixkit-illuminated-hotel-pool-at-night-22620-large.mp4",
     fallbackImage:
-      "https://images.pexels.com/photos/7974837/pexels-photo-7974837.jpeg?auto=compress&cs=tinysrgb&w=1920",
+      "/images/hotels/new-hotel/1.jpg",
     headline: "Where Stillness Meets the Sea",
     subtext:
       "A secluded oceanfront sanctuary on the Florida Keys — designed for those who travel to disappear, not to be seen.",
@@ -62,7 +62,7 @@ export const hotelConfig = {
       size: "750 sq ft",
       bed: "King Bed",
       image:
-        "https://images.pexels.com/photos/12652920/pexels-photo-12652920.jpeg?auto=compress&cs=tinysrgb&w=1260",
+        "/images/hotels/new-hotel/pexels-sureshasam750-18368842.jpg",
       amenities: [
         "Private ocean-view balcony",
         "Marble soaking tub",
@@ -82,7 +82,7 @@ export const hotelConfig = {
       size: "1,200 sq ft",
       bed: "Two Queen Beds",
       image:
-        "https://images.pexels.com/photos/16436912/pexels-photo-16436912.jpeg?auto=compress&cs=tinysrgb&w=1260",
+        "/images/hotels/new-hotel/pexels-reyd-valencia-2159301653-37797447_(1).jpg",
       amenities: [
         "Private plunge pool",
         "Outdoor rainfall shower",
@@ -102,7 +102,7 @@ export const hotelConfig = {
       size: "450 sq ft",
       bed: "Queen Bed",
       image:
-        "https://images.pexels.com/photos/36162678/pexels-photo-36162678.jpeg?auto=compress&cs=tinysrgb&w=1260",
+        "/images/hotels/new-hotel/marina-nazina-X0JT2EYZFJg-unsplash.jpg",
       amenities: [
         "Sunset-facing window",
         "Rain shower",
@@ -122,7 +122,7 @@ export const hotelConfig = {
       size: "2,000 sq ft",
       bed: "King + Two Singles",
       image:
-        "https://images.pexels.com/photos/18801079/pexels-photo-18801079.jpeg?auto=compress&cs=tinysrgb&w=1260",
+        "/images/hotels/new-hotel/1.jpg",
       amenities: [
         "360° rooftop terrace",
         "Dedicated butler",
@@ -216,42 +216,42 @@ export const hotelConfig = {
   // ---- Gallery ----
   gallery: [
     {
-      src: "https://images.pexels.com/photos/14150566/pexels-photo-14150566.jpeg?auto=compress&cs=tinysrgb&w=1260",
+      src: "/images/hotels/new-hotel/1.jpg",
       alt: "Aerial view of luxury resort surrounded by lush greenery and ocean",
       span: "wide",
     },
     {
-      src: "https://images.pexels.com/photos/14011664/pexels-photo-14011664.jpeg?auto=compress&cs=tinysrgb&w=1260",
+      src: "/images/hotels/new-hotel/pexels-reyd-valencia-2159301653-37797447_(1).jpg",
       alt: "Grand hotel lobby with staircase, marble floors, and chandelier",
       span: "tall",
     },
     {
-      src: "https://images.pexels.com/photos/10610442/pexels-photo-10610442.jpeg?auto=compress&cs=tinysrgb&w=1260",
+      src: "/images/hotels/new-hotel/pexels-sureshasam750-18368842.jpg",
       alt: "Luxurious poolside cabana at a hillside resort",
       span: "normal",
     },
     {
-      src: "https://images.pexels.com/photos/24433378/pexels-photo-24433378.jpeg?auto=compress&cs=tinysrgb&w=1260",
+      src: "/images/hotels/new-hotel/marina-nazina-X0JT2EYZFJg-unsplash.jpg",
       alt: "Romantic fine dining table setting with candlelight",
       span: "normal",
     },
     {
-      src: "https://images.pexels.com/photos/36877065/pexels-photo-36877065.jpeg?auto=compress&cs=tinysrgb&w=1260",
+      src: "/images/hotels/new-hotel/pexels-reyd-valencia-2159301653-37797447_(1).jpg",
       alt: "Modern luxury fitness center with equipment and city views",
       span: "normal",
     },
     {
-      src: "https://images.pexels.com/photos/14923410/pexels-photo-14923410.jpeg?auto=compress&cs=tinysrgb&w=1260",
+      src: "/images/hotels/new-hotel/1.jpg",
       alt: "Tropical beach at twilight with illuminated palm trees",
       span: "wide",
     },
     {
-      src: "https://images.pexels.com/photos/6466304/pexels-photo-6466304.jpeg?auto=compress&cs=tinysrgb&w=1260",
+      src: "/images/hotels/new-hotel/marina-nazina-X0JT2EYZFJg-unsplash.jpg",
       alt: "Luxurious breakfast scene with fresh pastries and coffee",
       span: "normal",
     },
     {
-      src: "https://images.pexels.com/photos/4170175/pexels-photo-4170175.jpeg?auto=compress&cs=tinysrgb&w=1260",
+      src: "/images/hotels/new-hotel/pexels-sureshasam750-18368842.jpg",
       alt: "Elegant spa interior with massage table and calming ambiance",
       span: "tall",
     },
@@ -263,7 +263,7 @@ export const hotelConfig = {
       name: "Eleanor Whitfield",
       location: "London, UK",
       avatar:
-        "https://images.pexels.com/photos/7717254/pexels-photo-7717254.jpeg?auto=compress&cs=tinysrgb&w=200",
+        "/images/hotels/new-hotel/marina-nazina-X0JT2EYZFJg-unsplash.jpg",
       rating: 5,
       text: "The most tranquil five days of our year. The Ocean Crest Suite felt like a private home above the sea. Every detail — from the turndown service to the morning coffee on the balcony — was effortless.",
     },
@@ -271,7 +271,7 @@ export const hotelConfig = {
       name: "Marcus Delgado",
       location: "Buenos Aires, AR",
       avatar:
-        "https://images.pexels.com/photos/5308640/pexels-photo-5308640.jpeg?auto=compress&cs=tinysrgb&w=200",
+        "/images/hotels/new-hotel/pexels-reyd-valencia-2159301653-37797447_(1).jpg",
       rating: 5,
       text: "We've stayed at resorts across three continents. Aurelia is the first place where the service felt invisible yet perfect. The spa alone is worth the trip — I left feeling ten years younger.",
     },
@@ -279,7 +279,7 @@ export const hotelConfig = {
       name: "Priya Nair",
       location: "Mumbai, IN",
       avatar:
-        "https://images.pexels.com/photos/6497112/pexels-photo-6497112.jpeg?auto=compress&cs=tinysrgb&w=200",
+        "/images/hotels/new-hotel/pexels-sureshasam750-18368842.jpg",
       rating: 5,
       text: "The Garden Villa with its private plunge pool was beyond anything we imagined. Our kids still talk about the beach path every morning. This is what a family vacation should feel like.",
     },
@@ -300,7 +300,7 @@ export const hotelConfig = {
       { value: "4.9", label: "Guest Rating" },
     ],
     image:
-      "https://images.pexels.com/photos/19689235/pexels-photo-19689235.jpeg?auto=compress&cs=tinysrgb&w=1260",
+      "/images/hotels/new-hotel/1.jpg",
   },
 
   // ---- FAQ ----
