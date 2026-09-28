@@ -1,0 +1,56 @@
+=========================================================
+  HOW TO ADD THE CLIENT'S PHOTOS TO THE WEBSITE
+=========================================================
+
+STEP 1: Put your photo files in THIS folder (public/images/).
+         You can drag and drop them in VS Code's file explorer.
+
+STEP 2: Name each photo EXACTLY as shown below.
+         Use .jpg or .png (lowercase).
+
+STEP 3: Tell me when you're done and I'll wire them up,
+         OR open src/config/hotelConfig.js and replace the
+         long https://... links with the names below.
+
+---------------------------------------------------------
+NAMES TO USE:
+---------------------------------------------------------
+
+HERO BACKGROUND (the big image at the very top):
+  hero-bg.jpg
+
+ROOM PHOTOS (the 4 room cards):
+  room-1.jpg   ->  Ocean Crest Suite
+  room-2.jpg   ->  Garden Villa
+  room-3.jpg   ->  Sunset Deluxe Room
+  room-4.jpg   ->  Presidential Penthouse
+
+GALLERY PHOTOS (the grid of 8 photos):
+  gallery-1.jpg
+  gallery-2.jpg
+  gallery-3.jpg
+  gallery-4.jpg
+  gallery-5.jpg
+  gallery-6.jpg
+  gallery-7.jpg
+  gallery-8.jpg
+
+TESTIMONIAL AVATARS (the 3 small round guest photos):
+  avatar-1.jpg
+  avatar-2.jpg
+  avatar-3.jpg
+
+ABOUT SECTION (the tall photo next to the story text):
+  about.jpg
+
+---------------------------------------------------------
+TOTAL: 17 photos
+---------------------------------------------------------
+
+TIPS:
+- Keep file sizes under 1 MB each (the site will load faster).
+- JPG is best for photos. PNG is fine too but larger.
+- You don't need to resize — the website crops automatically.
+- If a photo is portrait (tall) instead of landscape (wide),
+  it will still work, it just gets cropped to fit.
+---------------------------------------------------------
