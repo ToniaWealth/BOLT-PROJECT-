@@ -15,7 +15,7 @@ function formatDateWithOrdinal(dateStr: string): string {
 }
 
 export function buildRoomInquiryMessage(roomName: string): string {
-  return `Hello, I would like to check availability for the ${roomName}. Please let me know available dates.`;
+  return hotelConfig.whatsapp.roomInquiryTemplate.replace('{roomName}', roomName);
 }
 
 export function buildBookingMessage(
@@ -27,19 +27,28 @@ export function buildBookingMessage(
   const checkInFmt = formatDateWithOrdinal(checkIn);
   const checkOutFmt = formatDateWithOrdinal(checkOut);
 
-  let message = `Hello, I would like to book the ${roomName}`;
-  if (checkInFmt && checkOutFmt) {
-    message += ` from ${checkInFmt} to ${checkOutFmt}`;
-  }
+  let guestsStr = '';
   if (guests && guests !== '0' && guests !== '') {
     const n = parseInt(guests, 10);
-    message += ` for ${n} ${n === 1 ? 'adult' : 'adults'}`;
+    guestsStr = ` for ${n} ${n === 1 ? 'adult' : 'adults'}`;
   }
-  message += '. Please check availability.';
 
-  return message;
+  return hotelConfig.whatsapp.bookingTemplate
+    .replace('{roomName}', roomName)
+    .replace('{checkIn}', checkInFmt || 'N/A')
+    .replace('{checkOut}', checkOutFmt || 'N/A')
+    .replace('{guests}', guestsStr);
+}
+
+export function buildGeneralInquiryMessage(): string {
+  return hotelConfig.whatsapp.generalInquiryMessage;
 }
 
 export function buildWhatsAppUrl(message: string): string {
   return `https://wa.me/${hotelConfig.contact.whatsappNumber}?text=${encodeURIComponent(message)}`;
+}
+
+export function formatPrice(price: number): string {
+  const { currencySymbol } = hotelConfig.theme;
+  return `${currencySymbol}${price.toLocaleString()}`;
 }

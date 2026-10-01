@@ -11,13 +11,13 @@ import Reveal from '@/components/Reveal';
 import SectionHeading from '@/components/SectionHeading';
 
 export default function AboutPage() {
-  const { gallery, hero, about, testimonials } = hotelConfig;
+  const { gallery, hero, about, testimonials, sections, name } = hotelConfig;
   const [lightbox, setLightbox] = useState<string | null>(null);
 
   return (
     <>
       <PageHero
-        eyebrow="Our Story"
+        eyebrow={sections.about.eyebrow}
         title={about.title}
         subtitle="Where architecture, nature, and a philosophy of stillness converge."
         image={about.image}
@@ -32,9 +32,9 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <Reveal>
             <SectionHeading
-              eyebrow="Visual Journey"
-              title="Gallery"
-              subtitle="A glimpse into the world of ProlificWealth — where architecture, nature, and light converge."
+              eyebrow={sections.gallery.eyebrow}
+              title={sections.gallery.title!}
+              subtitle={(sections.gallery.subtitle || '').replace('{hotelName}', name)}
             />
           </Reveal>
           <Reveal delay={2}>

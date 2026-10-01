@@ -7,14 +7,14 @@ import Reveal from '@/components/Reveal';
 import SectionHeading from '@/components/SectionHeading';
 
 export default function RoomsPage() {
-  const { gallery, hero } = hotelConfig;
+  const { gallery, hero, sections } = hotelConfig;
 
   return (
     <>
       <PageHero
-        eyebrow="Accommodations"
-        title="Rooms & Suites"
-        subtitle="Each space is a private retreat — carefully appointed with natural materials, soft light, and unobstructed views."
+        eyebrow={sections.rooms.eyebrow}
+        title={sections.rooms.title!}
+        subtitle={sections.rooms.subtitle}
         image={gallery[0]?.src || hero.fallbackImage}
       />
 

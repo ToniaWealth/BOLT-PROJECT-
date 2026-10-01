@@ -3,19 +3,19 @@ import { Link } from 'react-router-dom';
 import hotelConfig from '@/config/hotelConfig';
 import Reveal from '@/components/Reveal';
 import SectionHeading from '@/components/SectionHeading';
-import { buildRoomInquiryMessage, buildWhatsAppUrl } from '@/utils/whatsapp';
+import { buildRoomInquiryMessage, buildWhatsAppUrl, formatPrice } from '@/utils/whatsapp';
 
 export default function Rooms() {
-  const { rooms } = hotelConfig;
+  const { rooms, sections } = hotelConfig;
 
   return (
     <section id="rooms" className="py-28 md:py-36 bg-ivory-50">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <Reveal>
           <SectionHeading
-            eyebrow="Accommodations"
-            title="Rooms & Suites"
-            subtitle="Each space is a private retreat — carefully appointed with natural materials, soft light, and unobstructed views of the ocean or gardens."
+            eyebrow={sections.rooms.eyebrow}
+            title={sections.rooms.title!}
+            subtitle={sections.rooms.subtitle}
           />
         </Reveal>
 
@@ -44,8 +44,8 @@ export default function Rooms() {
                       {room.name}
                     </h3>
                     <div className="text-right shrink-0">
-                      <span className="text-2xl font-serif font-light text-gold-600">
-                        ${room.price.toLocaleString()}
+                      <span className="text-2xl font-numeric font-medium text-gold-600">
+                        {formatPrice(room.price)}
                       </span>
                       <span className="block text-xs font-sans text-charcoal-400 uppercase tracking-wide-lg mt-1">
                         per {room.priceUnit}

@@ -2,13 +2,12 @@ import { Phone, Mail, MapPin, MessageCircle } from 'lucide-react';
 import hotelConfig from '@/config/hotelConfig';
 import Reveal from '@/components/Reveal';
 import SectionHeading from '@/components/SectionHeading';
+import { buildGeneralInquiryMessage, buildWhatsAppUrl } from '@/utils/whatsapp';
 
 export default function Contact() {
-  const { contact, name } = hotelConfig;
+  const { contact, sections } = hotelConfig;
 
-  const generalWhatsAppUrl = `https://wa.me/${contact.whatsappNumber}?text=${encodeURIComponent(
-    `Hello ${name}, I have a question about my upcoming stay.`
-  )}`;
+  const generalWhatsAppUrl = buildWhatsAppUrl(buildGeneralInquiryMessage());
 
   return (
     <section id="contact" className="py-28 md:py-36 bg-charcoal-900 relative overflow-hidden">
@@ -19,9 +18,9 @@ export default function Contact() {
       <div className="relative max-w-5xl mx-auto px-6 lg:px-10">
         <Reveal>
           <SectionHeading
-            eyebrow="Get in Touch"
-            title="Contact Us"
-            subtitle="Our concierge team is available around the clock to assist with reservations, special requests, or any questions you may have."
+            eyebrow={sections.contact.eyebrow}
+            title={sections.contact.title!}
+            subtitle={sections.contact.subtitle}
             light
           />
         </Reveal>

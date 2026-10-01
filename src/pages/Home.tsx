@@ -10,7 +10,7 @@ import Reveal from '@/components/Reveal';
 import SectionHeading from '@/components/SectionHeading';
 
 export default function Home() {
-  const { gallery, testimonials } = hotelConfig;
+  const { gallery, testimonials, sections, name } = hotelConfig;
   const previewGallery = gallery.slice(0, 6);
 
   return (
@@ -27,9 +27,9 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <Reveal>
             <SectionHeading
-              eyebrow="Visual Journey"
-              title="Gallery"
-              subtitle="A glimpse into the world of Aurelia — where architecture, nature, and light converge."
+              eyebrow={sections.gallery.eyebrow}
+              title={sections.gallery.title!}
+              subtitle={(sections.gallery.subtitle || '').replace('{hotelName}', name)}
             />
           </Reveal>
           <Reveal delay={2}>
@@ -72,9 +72,9 @@ export default function Home() {
         <div className="relative max-w-3xl mx-auto px-6 text-center">
           <Reveal>
             <SectionHeading
-              eyebrow="Begin Your Journey"
-              title="Your Sanctuary Awaits"
-              subtitle="Reserve your stay at ProlificWealth and discover what true stillness feels like."
+              eyebrow={sections.ctaBanner.eyebrow}
+              title={sections.ctaBanner.title!}
+              subtitle={(sections.ctaBanner.subtitle || '').replace('{hotelName}', name)}
               light
             />
           </Reveal>

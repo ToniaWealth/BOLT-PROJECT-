@@ -10,7 +10,7 @@ const serviceIconMap: Record<string, LucideIcon> = {
 };
 
 export default function Services() {
-  const { services } = hotelConfig;
+  const { services, sections } = hotelConfig;
 
   return (
     <section className="py-28 md:py-36 bg-charcoal-900 relative overflow-hidden">
@@ -24,12 +24,12 @@ export default function Services() {
             <div className="flex items-center justify-center gap-4 mb-5">
               <span className="h-px w-10 bg-gold-400" />
               <span className="text-xs font-sans font-medium uppercase tracking-[0.3em] text-gold-400">
-                Guest Services
+                {sections.services.eyebrow}
               </span>
               <span className="h-px w-10 bg-gold-400" />
             </div>
             <h2 className="font-serif text-4xl md:text-5xl lg:text-[3.25rem] font-light text-ivory-50 leading-[1.1]">
-              Effortless, Invisible, Attentive
+              {sections.services.title}
             </h2>
           </div>
         </Reveal>

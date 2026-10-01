@@ -3,7 +3,7 @@ import Reveal from '@/components/Reveal';
 import SectionHeading from '@/components/SectionHeading';
 
 export default function About() {
-  const { about } = hotelConfig;
+  const { about, sections } = hotelConfig;
 
   return (
     <section id="about" className="py-28 md:py-36 bg-ivory-50">
@@ -21,7 +21,7 @@ export default function About() {
 
           <div>
             <Reveal>
-              <SectionHeading eyebrow="Our Story" title={about.title} align="left" />
+              <SectionHeading eyebrow={sections.about.eyebrow} title={about.title} align="left" />
             </Reveal>
             <div className="mt-8 space-y-5">
               {about.paragraphs.map((paragraph, idx) => (
@@ -34,7 +34,7 @@ export default function About() {
               {about.stats.map((stat, idx) => (
                 <Reveal key={stat.label} delay={((idx + 1) as 1 | 2 | 3 | 4)}>
                   <div className="text-center sm:text-left">
-                    <p className="font-serif text-3xl md:text-4xl font-light text-gold-600">{stat.value}</p>
+                    <p className="font-numeric text-3xl md:text-4xl font-medium text-gold-600">{stat.value}</p>
                     <p className="mt-2 text-xs font-sans font-light text-charcoal-400 uppercase tracking-wide-lg leading-tight">{stat.label}</p>
                   </div>
                 </Reveal>

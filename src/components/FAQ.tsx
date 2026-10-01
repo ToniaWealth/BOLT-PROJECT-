@@ -5,7 +5,7 @@ import Reveal from '@/components/Reveal';
 import SectionHeading from '@/components/SectionHeading';
 
 export default function FAQ() {
-  const { faqs } = hotelConfig;
+  const { faqs, sections } = hotelConfig;
   const [openIdx, setOpenIdx] = useState<number | null>(0);
 
   return (
@@ -13,9 +13,9 @@ export default function FAQ() {
       <div className="max-w-3xl mx-auto px-6 lg:px-10">
         <Reveal>
           <SectionHeading
-            eyebrow="Good to Know"
-            title="Frequently Asked Questions"
-            subtitle="Everything you need to know before your stay. Can't find your answer? Reach out to our concierge team."
+            eyebrow={sections.faq.eyebrow}
+            title={sections.faq.title!}
+            subtitle={sections.faq.subtitle}
           />
         </Reveal>
 

@@ -3,7 +3,7 @@ import { Calendar, BedDouble, Users, MessageCircle } from 'lucide-react';
 import hotelConfig from '@/config/hotelConfig';
 import Reveal from '@/components/Reveal';
 import SectionHeading from '@/components/SectionHeading';
-import { buildBookingMessage, buildWhatsAppUrl } from '@/utils/whatsapp';
+import { buildBookingMessage, buildWhatsAppUrl, formatPrice } from '@/utils/whatsapp';
 
 function getNights(checkIn: string, checkOut: string): number {
   if (!checkIn || !checkOut) return 0;
@@ -14,7 +14,7 @@ function getNights(checkIn: string, checkOut: string): number {
 }
 
 export default function BookOnline() {
-  const { rooms } = hotelConfig;
+  const { rooms, sections } = hotelConfig;
   const [selectedRoom, setSelectedRoom] = useState(rooms[0]?.id || '');
   const [checkIn, setCheckIn] = useState('');
   const [checkOut, setCheckOut] = useState('');
@@ -45,9 +45,9 @@ export default function BookOnline() {
       <div className="relative max-w-4xl mx-auto px-6 lg:px-10">
         <Reveal>
           <SectionHeading
-            eyebrow="Reservations"
-            title="Book Your Stay"
-            subtitle="Select your room and dates below. We'll generate a pre-filled WhatsApp message for our concierge team to confirm your reservation."
+            eyebrow={sections.book.eyebrow}
+            title={sections.book.title!}
+            subtitle={sections.book.subtitle}
             light
           />
         </Reveal>
@@ -68,7 +68,7 @@ export default function BookOnline() {
                 >
                   {rooms.map((room) => (
                     <option key={room.id} value={room.id}>
-                      {room.name} — ${room.price.toLocaleString()}/{room.priceUnit}
+                      {room.name} — {formatPrice(room.price)}/{room.priceUnit}
                     </option>
                   ))}
                 </select>
@@ -129,10 +129,10 @@ export default function BookOnline() {
             {canBook && selectedRoomData && (
               <div className="mt-6 p-5 bg-ivory-100 rounded-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
                 <div className="text-sm font-sans font-light text-charcoal-600">
-                  <span className="font-medium text-charcoal-900">{nights}</span> {nights === 1 ? 'night' : 'nights'}{' '}
-                  × <span className="font-medium text-charcoal-900">${selectedRoomData.price.toLocaleString()}</span>
+                  <span className="font-numeric font-medium text-charcoal-900">{nights}</span> {nights === 1 ? 'night' : 'nights'}{' '}
+                  × <span className="font-numeric font-medium text-charcoal-900">{formatPrice(selectedRoomData.price)}</span>
                   <span className="block sm:inline sm:ml-2 text-charcoal-400">
-                    Total: <span className="font-medium text-gold-600">${(nights * selectedRoomData.price).toLocaleString()}</span>
+                    Total: <span className="font-numeric font-medium text-gold-600">{formatPrice(nights * selectedRoomData.price)}</span>
                   </span>
                 </div>
               </div>

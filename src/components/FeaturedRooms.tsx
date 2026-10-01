@@ -3,9 +3,10 @@ import { ArrowRight, Users, Maximize, BedDouble } from 'lucide-react';
 import hotelConfig from '@/config/hotelConfig';
 import Reveal from '@/components/Reveal';
 import SectionHeading from '@/components/SectionHeading';
+import { formatPrice } from '@/utils/whatsapp';
 
 export default function FeaturedRooms() {
-  const { rooms } = hotelConfig;
+  const { rooms, sections } = hotelConfig;
   const featured = rooms.slice(0, 2);
 
   return (
@@ -13,9 +14,9 @@ export default function FeaturedRooms() {
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <Reveal>
           <SectionHeading
-            eyebrow="Accommodations"
-            title="Featured Rooms & Suites"
-            subtitle="Each space is a private retreat — carefully appointed with natural materials, soft light, and unobstructed views of the ocean or gardens."
+            eyebrow={sections.featuredRooms.eyebrow}
+            title={sections.featuredRooms.title!}
+            subtitle={sections.featuredRooms.subtitle}
           />
         </Reveal>
 
@@ -41,8 +42,8 @@ export default function FeaturedRooms() {
                       {room.name}
                     </h3>
                     <div className="text-right shrink-0">
-                      <span className="text-2xl font-serif font-light text-gold-600">
-                        ${room.price.toLocaleString()}
+                      <span className="text-2xl font-numeric font-medium text-gold-600">
+                        {formatPrice(room.price)}
                       </span>
                       <span className="block text-xs font-sans text-charcoal-400 uppercase tracking-wide-lg mt-1">
                         per {room.priceUnit}
@@ -88,7 +89,7 @@ export default function FeaturedRooms() {
               to="/rooms"
               className="inline-flex items-center gap-3 px-9 py-4 bg-gold-500 text-white text-sm font-sans font-medium tracking-wide-lg rounded-sm hover:bg-gold-600 transition-all duration-300 hover:scale-[1.02] shadow-lg group"
             >
-              Explore All Rooms
+              {sections.featuredRooms.viewAllLabel}
               <ArrowRight size={18} className="transition-transform duration-300 group-hover:translate-x-1" />
             </Link>
           </div>

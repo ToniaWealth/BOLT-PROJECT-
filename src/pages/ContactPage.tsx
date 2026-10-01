@@ -4,14 +4,14 @@ import BookOnline from '@/components/BookOnline';
 import Contact from '@/components/Contact';
 
 export default function ContactPage() {
-  const { gallery, hero } = hotelConfig;
+  const { gallery, hero, sections } = hotelConfig;
 
   return (
     <>
       <PageHero
-        eyebrow="Get in Touch"
+        eyebrow={sections.contact.eyebrow}
         title="Contact & Reservations"
-        subtitle="Our concierge team is available around the clock to assist with reservations, special requests, or any questions."
+        subtitle={sections.contact.subtitle}
         image={gallery[5]?.src || hero.fallbackImage}
       />
       <BookOnline />

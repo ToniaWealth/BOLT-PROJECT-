@@ -5,7 +5,7 @@ import Reveal from '@/components/Reveal';
 import SectionHeading from '@/components/SectionHeading';
 
 export default function HomeIntro() {
-  const { about } = hotelConfig;
+  const { about, sections, name } = hotelConfig;
 
   return (
     <section className="py-28 md:py-36 bg-ivory-50">
@@ -23,7 +23,7 @@ export default function HomeIntro() {
 
           <div>
             <Reveal>
-              <SectionHeading eyebrow="Welcome to ProlificWealth" title={about.title} align="left" />
+              <SectionHeading eyebrow={(sections.homeIntro.eyebrow + ' ' + name).trim()} title={about.title} align="left" />
             </Reveal>
             <Reveal delay={1}>
               <p className="mt-8 text-base font-sans font-light text-charcoal-500 leading-relaxed">
@@ -34,7 +34,7 @@ export default function HomeIntro() {
               <div className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-6">
                 {about.stats.map((stat) => (
                   <div key={stat.label} className="text-center sm:text-left">
-                    <p className="font-serif text-3xl md:text-4xl font-light text-gold-600">{stat.value}</p>
+                    <p className="font-numeric text-3xl md:text-4xl font-medium text-gold-600">{stat.value}</p>
                     <p className="mt-2 text-xs font-sans font-light text-charcoal-400 uppercase tracking-wide-lg leading-tight">{stat.label}</p>
                   </div>
                 ))}
@@ -45,7 +45,7 @@ export default function HomeIntro() {
                 to="/about"
                 className="mt-10 inline-flex items-center gap-3 px-7 py-3.5 bg-gold-500 text-white text-sm font-sans font-medium tracking-wide-lg rounded-sm hover:bg-gold-600 transition-all duration-300 hover:scale-[1.02] group"
               >
-                Discover Our Story
+                {sections.homeIntro.ctaLabel}
                 <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
               </Link>
             </Reveal>

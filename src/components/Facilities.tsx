@@ -13,16 +13,16 @@ const iconMap: Record<string, LucideIcon> = {
 };
 
 export default function Facilities() {
-  const { facilities } = hotelConfig;
+  const { facilities, sections } = hotelConfig;
 
   return (
     <section id="facilities" className="py-28 md:py-36 bg-ivory-100">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <Reveal>
           <SectionHeading
-            eyebrow="Amenities"
-            title="Resort Facilities"
-            subtitle="Everything you need is woven into the landscape — from the infinity pool that meets the ocean to the spa tucked among the palms."
+            eyebrow={sections.facilities.eyebrow}
+            title={sections.facilities.title!}
+            subtitle={sections.facilities.subtitle}
           />
         </Reveal>
 

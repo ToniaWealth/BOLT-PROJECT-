@@ -5,6 +5,54 @@
 // =============================================================
 
 export const hotelConfig = {
+  // ---- Theme: Colors, Fonts & Currency ----
+  theme: {
+    currencySymbol: "₦",
+    fonts: {
+      // Headings / display serif font
+      serif: '"Cormorant Garamond"',
+      // Body sans-serif font
+      sans: '"Jost"',
+      // Numbers / prices — clean, professional
+      numeric: '"Manrope"',
+    },
+    colors: {
+      ivory: {
+        50: "#fdfcf9",
+        100: "#faf7f0",
+        200: "#f3ede1",
+        300: "#e9e0cd",
+        400: "#d8ccb3",
+        500: "#c4b494",
+      },
+      charcoal: {
+        50: "#f7f6f4",
+        100: "#e8e6e2",
+        200: "#d1cec8",
+        300: "#aaa5a0",
+        400: "#7a7570",
+        500: "#5c5752",
+        600: "#474340",
+        700: "#3a3733",
+        800: "#2a2825",
+        900: "#1c1a18",
+        950: "#0d0c0b",
+      },
+      gold: {
+        50: "#fbf7ee",
+        100: "#f5ecd5",
+        200: "#e9d4a8",
+        300: "#d9b878",
+        400: "#c9a961",
+        500: "#b8924a",
+        600: "#9c7a3a",
+        700: "#7e6230",
+        800: "#604a25",
+        900: "#4a391c",
+      },
+    },
+  },
+
   // ---- Brand & Identity ----
   name: "ProlificWealth",
   tagline: "Where Stillness Meets the Sea",
@@ -29,6 +77,19 @@ export const hotelConfig = {
     },
   },
 
+  // ---- WhatsApp ----
+  whatsapp: {
+    // Pre-filled message for general inquiries (Contact page)
+    generalInquiryMessage:
+      "Hello, I have a question about my upcoming stay.",
+    // Pre-filled message for room availability checks
+    roomInquiryTemplate:
+      "Hello, I would like to check availability for the {roomName}. Please let me know available dates.",
+    // Pre-filled message for booking requests
+    bookingTemplate:
+      "Hello, I would like to book the {roomName} from {checkIn} to {checkOut}{guests}. Please check availability.",
+  },
+
   // ---- Social ----
   social: {
     instagram: "https://instagram.com",
@@ -49,6 +110,75 @@ export const hotelConfig = {
     secondaryCta: "Explore Rooms",
   },
 
+  // ---- Section Headings (configurable text) ----
+  sections: {
+    homeIntro: {
+      eyebrow: "Welcome",
+      ctaLabel: "Discover Our Story",
+    },
+    rooms: {
+      eyebrow: "Accommodations",
+      title: "Rooms & Suites",
+      subtitle:
+        "Each space is a private retreat — carefully appointed with natural materials, soft light, and unobstructed views of the ocean or gardens.",
+    },
+    featuredRooms: {
+      eyebrow: "Accommodations",
+      title: "Featured Rooms & Suites",
+      subtitle:
+        "Each space is a private retreat — carefully appointed with natural materials, soft light, and unobstructed views of the ocean or gardens.",
+      viewAllLabel: "Explore All Rooms",
+    },
+    facilities: {
+      eyebrow: "Amenities",
+      title: "Resort Facilities",
+      subtitle:
+        "Everything you need is woven into the landscape — from the infinity pool that meets the ocean to the spa tucked among the palms.",
+    },
+    services: {
+      eyebrow: "Guest Services",
+      title: "Effortless, Invisible, Attentive",
+    },
+    gallery: {
+      eyebrow: "Visual Journey",
+      title: "Gallery",
+      subtitle:
+        "A glimpse into the world of {hotelName} — where architecture, nature, and light converge.",
+    },
+    testimonials: {
+      eyebrow: "Guest Stories",
+      title: "What Our Guests Say",
+      subtitle: "The words of those who have experienced {hotelName} first-hand.",
+    },
+    about: {
+      eyebrow: "Our Story",
+    },
+    faq: {
+      eyebrow: "Good to Know",
+      title: "Frequently Asked Questions",
+      subtitle:
+        "Everything you need to know before your stay. Can't find your answer? Reach out to our concierge team.",
+    },
+    book: {
+      eyebrow: "Reservations",
+      title: "Book Your Stay",
+      subtitle:
+        "Select your room and dates below. We'll generate a pre-filled WhatsApp message for our concierge team to confirm your reservation.",
+    },
+    contact: {
+      eyebrow: "Get in Touch",
+      title: "Contact Us",
+      subtitle:
+        "Our concierge team is available around the clock to assist with reservations, special requests, or any questions you may have.",
+    },
+    ctaBanner: {
+      eyebrow: "Begin Your Journey",
+      title: "Your Sanctuary Awaits",
+      subtitle:
+        "Reserve your stay at {hotelName} and discover what true stillness feels like.",
+    },
+  },
+
   // ---- Rooms ----
   rooms: [
     {
@@ -56,7 +186,7 @@ export const hotelConfig = {
       name: "Ocean Crest Suite",
       description:
         "A 750 sq ft sanctuary with floor-to-ceiling windows framing the Atlantic. Features a private balcony, king-size bed, and a marble soaking tub.",
-      price: 620,
+      price: 150000,
       priceUnit: "night",
       capacity: "2 Guests",
       size: "750 sq ft",
@@ -76,7 +206,7 @@ export const hotelConfig = {
       name: "Garden Villa",
       description:
         "A freestanding villa nestled in tropical gardens with a private plunge pool, outdoor shower, and direct beach access through a private path.",
-      price: 890,
+      price: 220000,
       priceUnit: "night",
       capacity: "4 Guests",
       size: "1,200 sq ft",
@@ -96,7 +226,7 @@ export const hotelConfig = {
       name: "Sunset Deluxe Room",
       description:
         "An intimate room positioned to capture golden-hour light. Features a rain shower, custom furnishings, and a cozy reading nook by the window.",
-      price: 380,
+      price: 95000,
       priceUnit: "night",
       capacity: "2 Guests",
       size: "450 sq ft",
@@ -116,7 +246,7 @@ export const hotelConfig = {
       name: "Presidential Penthouse",
       description:
         "Our crown jewel — a 2,000 sq ft rooftop penthouse with 360° ocean views, a private rooftop terrace, dedicated butler service, and a chef's kitchen.",
-      price: 1450,
+      price: 380000,
       priceUnit: "night",
       capacity: "4 Guests",
       size: "2,000 sq ft",
@@ -328,7 +458,7 @@ export const hotelConfig = {
     {
       question: "Are pets allowed?",
       answer:
-        "Yes, ProlificWealth is a pet-friendly resort. Well-behaved pets are welcome in select room types with a one-time pet fee of $150, which includes a pet bed, bowls, and a welcome treat.",
+        "Yes, ProlificWealth is a pet-friendly resort. Well-behaved pets are welcome in select room types with a one-time pet fee, which includes a pet bed, bowls, and a welcome treat.",
     },
     {
       question: "Is the spa open to non-guests?",

@@ -1,3 +1,23 @@
+export type Theme = {
+  currencySymbol: string;
+  fonts: {
+    serif: string;
+    sans: string;
+    numeric: string;
+  };
+  colors: {
+    ivory: Record<string, string>;
+    charcoal: Record<string, string>;
+    gold: Record<string, string>;
+  };
+};
+
+export type WhatsAppConfig = {
+  generalInquiryMessage: string;
+  roomInquiryTemplate: string;
+  bookingTemplate: string;
+};
+
 export type Room = {
   id: string;
   name: string;
@@ -47,7 +67,31 @@ export type NavLink = {
   href: string;
 };
 
+export type SectionConfig = {
+  eyebrow: string;
+  title?: string;
+  subtitle?: string;
+  ctaLabel?: string;
+  viewAllLabel?: string;
+};
+
+export type SectionsConfig = {
+  homeIntro: SectionConfig;
+  rooms: SectionConfig;
+  featuredRooms: SectionConfig;
+  facilities: SectionConfig;
+  services: SectionConfig;
+  gallery: SectionConfig;
+  testimonials: SectionConfig;
+  about: SectionConfig;
+  faq: SectionConfig;
+  book: SectionConfig;
+  contact: SectionConfig;
+  ctaBanner: SectionConfig;
+};
+
 export type HotelConfig = {
+  theme: Theme;
   name: string;
   tagline: string;
   logoText: string;
@@ -60,6 +104,7 @@ export type HotelConfig = {
     address: { line1: string; line2: string; full: string };
     hours: { checkIn: string; checkOut: string; reception: string };
   };
+  whatsapp: WhatsAppConfig;
   social: { instagram: string; facebook: string; twitter: string };
   hero: {
     videoUrl: string;
@@ -69,6 +114,7 @@ export type HotelConfig = {
     primaryCta: string;
     secondaryCta: string;
   };
+  sections: SectionsConfig;
   rooms: Room[];
   facilities: Facility[];
   services: Service[];

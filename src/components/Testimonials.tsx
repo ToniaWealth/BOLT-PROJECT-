@@ -16,9 +16,9 @@ export default function Testimonials({ testimonials }: TestimonialsProps) {
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <Reveal>
           <SectionHeading
-            eyebrow="Guest Stories"
-            title="What Our Guests Say"
-            subtitle="The words of those who have experienced ProlificWealth first-hand."
+            eyebrow={hotelConfig.sections.testimonials.eyebrow}
+            title={hotelConfig.sections.testimonials.title!}
+            subtitle={(hotelConfig.sections.testimonials.subtitle || '').replace('{hotelName}', hotelConfig.name)}
           />
         </Reveal>
 
