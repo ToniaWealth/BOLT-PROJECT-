@@ -1,34 +1,30 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
-import Hero from '@/components/Hero';
-import Rooms from '@/components/Rooms';
-import BookOnline from '@/components/BookOnline';
-import Facilities from '@/components/Facilities';
-import Services from '@/components/Services';
-import Gallery from '@/components/Gallery';
-import Testimonials from '@/components/Testimonials';
-import About from '@/components/About';
-import FAQ from '@/components/FAQ';
-import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
+import ScrollToTop from '@/components/ScrollToTop';
+import Home from '@/pages/Home';
+import RoomsPage from '@/pages/RoomsPage';
+import AboutPage from '@/pages/AboutPage';
+import ContactPage from '@/pages/ContactPage';
 
 function App() {
   return (
-    <div className="min-h-screen bg-ivory-50">
-      <Navbar />
-      <main>
-        <Hero />
-        <Rooms />
-        <BookOnline />
-        <Facilities />
-        <Services />
-        <Gallery />
-        <Testimonials />
-        <About />
-        <FAQ />
-        <Contact />
-      </main>
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <ScrollToTop />
+      <div className="min-h-screen bg-ivory-50">
+        <Navbar />
+        <main>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/rooms" element={<RoomsPage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="*" element={<Home />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
+    </BrowserRouter>
   );
 }
 

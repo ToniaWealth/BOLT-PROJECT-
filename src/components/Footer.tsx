@@ -1,4 +1,5 @@
 import { Instagram, Facebook, Twitter, Phone, Mail, MapPin } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import hotelConfig from '@/config/hotelConfig';
 
 export default function Footer() {
@@ -63,12 +64,12 @@ export default function Footer() {
               <ul className="space-y-3">
                 {navLinks.map((link) => (
                   <li key={link.href}>
-                    <a
-                      href={link.href}
+                    <Link
+                      to={link.href}
                       className="text-sm font-sans font-light text-ivory-200/60 hover:text-gold-400 transition-colors duration-300"
                     >
                       {link.label}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>

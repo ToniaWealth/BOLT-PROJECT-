@@ -2,9 +2,14 @@ import { Star, Quote } from 'lucide-react';
 import hotelConfig from '@/config/hotelConfig';
 import Reveal from '@/components/Reveal';
 import SectionHeading from '@/components/SectionHeading';
+import type { Testimonial } from '@/config/hotelConfig';
 
-export default function Testimonials() {
-  const { testimonials } = hotelConfig;
+type TestimonialsProps = {
+  testimonials?: Testimonial[];
+};
+
+export default function Testimonials({ testimonials }: TestimonialsProps) {
+  const items = testimonials ?? hotelConfig.testimonials;
 
   return (
     <section className="py-28 md:py-36 bg-ivory-100">
@@ -13,12 +18,12 @@ export default function Testimonials() {
           <SectionHeading
             eyebrow="Guest Stories"
             title="What Our Guests Say"
-            subtitle="The words of those who have experienced Aurelia first-hand."
+            subtitle="The words of those who have experienced ProlificWealth first-hand."
           />
         </Reveal>
 
         <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10">
-          {testimonials.map((testimonial, idx) => (
+          {items.map((testimonial, idx) => (
             <Reveal
               key={testimonial.name}
               delay={((idx % 3) + 1) as 1 | 2 | 3}

@@ -339,12 +339,10 @@ export const hotelConfig = {
 
   // ---- Navigation ----
   navLinks: [
-    { label: "Rooms", href: "#rooms" },
-    { label: "Book", href: "#book" },
-    { label: "Facilities", href: "#facilities" },
-    { label: "Gallery", href: "#gallery" },
-    { label: "About", href: "#about" },
-    { label: "Contact", href: "#contact" },
+    { label: "Home", href: "/" },
+    { label: "Rooms", href: "/rooms" },
+    { label: "About", href: "/about" },
+    { label: "Contact", href: "/contact" },
   ],
 };
 

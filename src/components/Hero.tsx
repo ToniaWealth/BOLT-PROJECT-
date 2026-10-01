@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { ChevronDown } from 'lucide-react';
 import hotelConfig from '@/config/hotelConfig';
 
@@ -54,18 +55,18 @@ export default function Hero() {
             {hero.subtext}
           </p>
           <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a
-              href="#book"
+            <Link
+              to="/contact"
               className="px-9 py-4 bg-gold-500 text-white text-sm font-sans font-medium tracking-wide-lg rounded-sm hover:bg-gold-600 transition-all duration-300 hover:scale-[1.02] shadow-lg"
             >
               {hero.primaryCta}
-            </a>
-            <a
-              href="#rooms"
+            </Link>
+            <Link
+              to="/rooms"
               className="px-9 py-4 border border-ivory-100/30 text-ivory-50 text-sm font-sans font-medium tracking-wide-lg rounded-sm hover:bg-ivory-50/10 transition-all duration-300 backdrop-blur-sm"
             >
               {hero.secondaryCta}
-            </a>
+            </Link>
           </div>
         </div>
       </div>
