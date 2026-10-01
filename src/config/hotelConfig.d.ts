@@ -62,6 +62,12 @@ export type FAQItem = {
   answer: string;
 };
 
+export type SocialLink = {
+  icon: string;
+  label: string;
+  url: string;
+};
+
 export type NavLink = {
   label: string;
   href: string;
@@ -105,7 +111,7 @@ export type HotelConfig = {
     hours: { checkIn: string; checkOut: string; reception: string };
   };
   whatsapp: WhatsAppConfig;
-  social: { instagram: string; facebook: string; twitter: string };
+  social: SocialLink[];
   hero: {
     videoUrl: string;
     fallbackImage: string;

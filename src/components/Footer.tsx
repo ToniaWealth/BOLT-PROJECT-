@@ -1,6 +1,34 @@
-import { Instagram, Facebook, Twitter, Phone, Mail, MapPin } from 'lucide-react';
+import {
+  Instagram,
+  Facebook,
+  Twitter,
+  Youtube,
+  Linkedin,
+  Twitch,
+  Github,
+  Dribbble,
+  Send,
+  MessageCircle,
+  Phone,
+  Mail,
+  MapPin,
+  type LucideIcon,
+} from 'lucide-react';
 import { Link } from 'react-router-dom';
 import hotelConfig from '@/config/hotelConfig';
+
+const iconMap: Record<string, LucideIcon> = {
+  Instagram,
+  Facebook,
+  Twitter,
+  Youtube,
+  Linkedin,
+  Twitch,
+  Github,
+  Dribbble,
+  Send,
+  MessageCircle,
+};
 
 export default function Footer() {
   const { name, logoText, logoSubtext, contact, social, navLinks, tagline } = hotelConfig;
@@ -26,33 +54,21 @@ export default function Footer() {
                 {tagline}
               </p>
               <div className="mt-8 flex items-center gap-4">
-                <a
-                  href={social.instagram}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-full border border-ivory-200/15 flex items-center justify-center hover:bg-gold-500 hover:border-gold-500 transition-all duration-300"
-                  aria-label="Instagram"
-                >
-                  <Instagram size={16} className="text-ivory-200" />
-                </a>
-                <a
-                  href={social.facebook}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-full border border-ivory-200/15 flex items-center justify-center hover:bg-gold-500 hover:border-gold-500 transition-all duration-300"
-                  aria-label="Facebook"
-                >
-                  <Facebook size={16} className="text-ivory-200" />
-                </a>
-                <a
-                  href={social.twitter}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-full border border-ivory-200/15 flex items-center justify-center hover:bg-gold-500 hover:border-gold-500 transition-all duration-300"
-                  aria-label="Twitter"
-                >
-                  <Twitter size={16} className="text-ivory-200" />
-                </a>
+                {social.map((socialLink) => {
+                  const Icon = iconMap[socialLink.icon] || MessageCircle;
+                  return (
+                    <a
+                      key={socialLink.icon}
+                      href={socialLink.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-10 h-10 rounded-full border border-ivory-200/15 flex items-center justify-center hover:bg-gold-500 hover:border-gold-500 transition-all duration-300"
+                      aria-label={socialLink.label}
+                    >
+                      <Icon size={16} className="text-ivory-200" />
+                    </a>
+                  );
+                })}
               </div>
             </div>
 

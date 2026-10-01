@@ -91,11 +91,14 @@ export const hotelConfig = {
   },
 
   // ---- Social ----
-  social: {
-    instagram: "https://instagram.com",
-    facebook: "https://facebook.com",
-    twitter: "https://twitter.com",
-  },
+  // Add, remove, or reorder social links here.
+  // Available icons: Instagram, Facebook, Twitter, Youtube, Linkedin,
+  // Twitch, Github, Dribbble, Send (Telegram), MessageCircle (WhatsApp)
+  social: [
+    { icon: "Instagram", label: "Instagram", url: "https://instagram.com" },
+    { icon: "Facebook", label: "Facebook", url: "https://facebook.com" },
+    { icon: "Twitter", label: "Twitter", url: "https://twitter.com" },
+  ],
 
   // ---- Hero ----
   hero: {
