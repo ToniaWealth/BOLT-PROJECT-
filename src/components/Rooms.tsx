@@ -1,12 +1,14 @@
 import { Users, Maximize, BedDouble, ArrowRight, MessageCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import hotelConfig from '@/config/hotelConfig';
+import { usePublicRooms } from '@/lib/usePublicRooms';
 import Reveal from '@/components/Reveal';
 import SectionHeading from '@/components/SectionHeading';
 import { buildRoomInquiryMessage, buildWhatsAppUrl, formatPrice } from '@/utils/whatsapp';
 
 export default function Rooms() {
-  const { rooms, sections } = hotelConfig;
+  const { sections } = hotelConfig;
+  const { rooms } = usePublicRooms();
 
   return (
     <section id="rooms" className="py-28 md:py-36 bg-ivory-50">

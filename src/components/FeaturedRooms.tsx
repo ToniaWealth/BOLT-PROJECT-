@@ -1,12 +1,14 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight, Users, Maximize, BedDouble } from 'lucide-react';
 import hotelConfig from '@/config/hotelConfig';
+import { usePublicRooms } from '@/lib/usePublicRooms';
 import Reveal from '@/components/Reveal';
 import SectionHeading from '@/components/SectionHeading';
 import { formatPrice } from '@/utils/whatsapp';
 
 export default function FeaturedRooms() {
-  const { rooms, sections } = hotelConfig;
+  const { sections } = hotelConfig;
+  const { rooms } = usePublicRooms();
   const featured = rooms.slice(0, 2);
 
   return (

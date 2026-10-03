@@ -1,6 +1,7 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { Calendar, BedDouble, Users, MessageCircle } from 'lucide-react';
 import hotelConfig from '@/config/hotelConfig';
+import { usePublicRooms } from '@/lib/usePublicRooms';
 import Reveal from '@/components/Reveal';
 import SectionHeading from '@/components/SectionHeading';
 import { buildBookingMessage, buildWhatsAppUrl, formatPrice } from '@/utils/whatsapp';
@@ -14,11 +15,18 @@ function getNights(checkIn: string, checkOut: string): number {
 }
 
 export default function BookOnline() {
-  const { rooms, sections } = hotelConfig;
+  const { sections } = hotelConfig;
+  const { rooms } = usePublicRooms();
   const [selectedRoom, setSelectedRoom] = useState(rooms[0]?.id || '');
   const [checkIn, setCheckIn] = useState('');
   const [checkOut, setCheckOut] = useState('');
   const [guests, setGuests] = useState('');
+
+  useEffect(() => {
+    if (rooms.length > 0 && !rooms.find((r) => r.id === selectedRoom)) {
+      setSelectedRoom(rooms[0].id);
+    }
+  }, [rooms, selectedRoom]);
 
   const today = new Date().toISOString().split('T')[0];
 
