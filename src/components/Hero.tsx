@@ -2,9 +2,11 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronDown } from 'lucide-react';
 import hotelConfig from '@/config/hotelConfig';
+import { useSiteContent } from '@/lib/useSiteContent';
 
 export default function Hero() {
-  const { hero, name } = hotelConfig;
+  const { hero } = hotelConfig;
+  const { content } = useSiteContent();
   const [videoLoaded, setVideoLoaded] = useState(false);
 
   useEffect(() => {
@@ -44,7 +46,7 @@ export default function Hero() {
           <div className="flex items-center justify-center gap-4 mb-8">
             <span className="h-px w-12 bg-gold-400" />
             <span className="text-xs font-sans font-medium uppercase tracking-[0.35em] text-ivory-200">
-              {name}
+              {content.hotel_name}
             </span>
             <span className="h-px w-12 bg-gold-400" />
           </div>

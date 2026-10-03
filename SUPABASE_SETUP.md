@@ -1,13 +1,15 @@
 # Supabase Database Setup
 
-Since the database couldn't be configured automatically, you need to run the SQL migrations manually. This takes about 3 minutes.
+Since the database couldn't be configured automatically, you need to run the SQL migrations manually. This takes about 5 minutes.
 
-## Step 1: Run the SQL Migration
+## Step 1: Run the SQL Migrations
 
 1. Go to your Supabase Dashboard → **SQL Editor**
 2. Click **New query**
-3. Paste the SQL below
-4. Click **Run**
+3. Paste the SQL for each table below, one at a time
+4. Click **Run** after each
+
+### Rooms Table
 
 ```sql
 CREATE TABLE IF NOT EXISTS rooms (
@@ -66,8 +68,6 @@ ON CONFLICT (id) DO NOTHING;
 
 ### Blog Posts Table
 
-Run this separately after the rooms table:
-
 ```sql
 CREATE TABLE IF NOT EXISTS blog_posts (
   id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
@@ -113,6 +113,104 @@ CREATE INDEX IF NOT EXISTS blog_posts_slug_idx ON blog_posts(slug);
 CREATE INDEX IF NOT EXISTS blog_posts_status_idx ON blog_posts(status);
 ```
 
+### Site Content Table (Hotel Info & About)
+
+```sql
+CREATE TABLE IF NOT EXISTS site_content (
+  id text PRIMARY KEY DEFAULT 'singleton',
+  hotel_name text,
+  tagline text,
+  logo_text text,
+  logo_subtext text,
+  phone text,
+  phone_raw text,
+  whatsapp_number text,
+  email text,
+  address_line1 text,
+  address_line2 text,
+  about_title text,
+  about_paragraphs text[],
+  about_image text,
+  about_stat_1_value text,
+  about_stat_1_label text,
+  about_stat_2_value text,
+  about_stat_2_label text,
+  about_stat_3_value text,
+  about_stat_3_label text,
+  about_stat_4_value text,
+  about_stat_4_label text,
+  updated_at timestamptz NOT NULL DEFAULT now()
+);
+
+ALTER TABLE site_content ENABLE ROW LEVEL SECURITY;
+
+DROP POLICY IF EXISTS "public_select_site_content" ON site_content;
+CREATE POLICY "public_select_site_content"
+ON site_content FOR SELECT
+TO anon, authenticated
+USING (true);
+
+DROP POLICY IF EXISTS "auth_insert_site_content" ON site_content;
+CREATE POLICY "auth_insert_site_content"
+ON site_content FOR INSERT
+TO authenticated
+WITH CHECK (true);
+
+DROP POLICY IF EXISTS "auth_update_site_content" ON site_content;
+CREATE POLICY "auth_update_site_content"
+ON site_content FOR UPDATE
+TO authenticated
+USING (true) WITH CHECK (true);
+
+DROP POLICY IF EXISTS "auth_delete_site_content" ON site_content;
+CREATE POLICY "auth_delete_site_content"
+ON site_content FOR DELETE
+TO authenticated
+USING (true);
+```
+
+### Facilities Table
+
+```sql
+CREATE TABLE IF NOT EXISTS facilities (
+  id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+  icon text NOT NULL DEFAULT 'Sparkles',
+  title text NOT NULL,
+  description text NOT NULL DEFAULT '',
+  sort_order integer NOT NULL DEFAULT 0,
+  created_at timestamptz NOT NULL DEFAULT now(),
+  updated_at timestamptz NOT NULL DEFAULT now()
+);
+
+ALTER TABLE facilities ENABLE ROW LEVEL SECURITY;
+
+DROP POLICY IF EXISTS "public_select_facilities" ON facilities;
+CREATE POLICY "public_select_facilities"
+ON facilities FOR SELECT
+TO anon, authenticated
+USING (true);
+
+DROP POLICY IF EXISTS "auth_insert_facilities" ON facilities;
+CREATE POLICY "auth_insert_facilities"
+ON facilities FOR INSERT
+TO authenticated
+WITH CHECK (true);
+
+DROP POLICY IF EXISTS "auth_update_facilities" ON facilities;
+CREATE POLICY "auth_update_facilities"
+ON facilities FOR UPDATE
+TO authenticated
+USING (true) WITH CHECK (true);
+
+DROP POLICY IF EXISTS "auth_delete_facilities" ON facilities;
+CREATE POLICY "auth_delete_facilities"
+ON facilities FOR DELETE
+TO authenticated
+USING (true);
+
+CREATE INDEX IF NOT EXISTS facilities_sort_order_idx ON facilities(sort_order);
+```
+
 ## Step 2: Create an Admin User
 
 1. Go to **Authentication → Users**
@@ -127,7 +225,9 @@ Go to `/admin/login` in your website and sign in with the credentials you just c
 
 ## What This Does
 
-- Creates a `rooms` table with all the fields your website needs
-- Seeds it with your 4 existing rooms so the public site keeps working
-- Creates a `blog_posts` table for the blog CMS
-- Sets up security so anyone can view published content, but only logged-in admins can add, edit, or delete
+- **rooms** — stores room listings, seeded with 4 existing rooms
+- **blog_posts** — stores blog articles with published/draft status
+- **site_content** — stores hotel name, contact info, and about section text (single row, editable from admin)
+- **facilities** — stores the facilities list shown on the public site
+- All tables have security rules: public can read published content, only logged-in admins can add, edit, or delete
+- Until you run these migrations, the website uses the built-in config file as a fallback so it never breaks

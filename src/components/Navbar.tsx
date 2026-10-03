@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import hotelConfig from '@/config/hotelConfig';
+import { useSiteContent } from '@/lib/useSiteContent';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -26,7 +27,8 @@ export default function Navbar() {
     setMenuOpen(false);
   }, [pathname]);
 
-  const { navLinks, logoText, logoSubtext, contact } = hotelConfig;
+  const { navLinks } = hotelConfig;
+  const { content } = useSiteContent();
 
   const solid = scrolled || !isHome;
 
@@ -47,14 +49,14 @@ export default function Navbar() {
                 solid ? 'text-charcoal-900' : 'text-ivory-50'
               }`}
             >
-              {logoText}
+              {content.logo_text}
             </span>
             <span
               className={`text-[0.625rem] font-sans font-medium tracking-[0.35em] uppercase mt-1.5 transition-colors duration-700 ${
                 solid ? 'text-gold-500' : 'text-gold-300'
               }`}
             >
-              {logoSubtext}
+              {content.logo_subtext}
             </span>
           </Link>
 
@@ -106,7 +108,7 @@ export default function Navbar() {
         >
           <div className="flex items-center justify-between px-6 h-20 border-b border-ivory-200">
             <span className="font-serif text-xl font-light tracking-[0.2em] text-charcoal-900">
-              {logoText}
+              {content.logo_text}
             </span>
             <button onClick={() => setMenuOpen(false)} aria-label="Close menu" className="text-charcoal-600">
               <X size={24} />
@@ -131,10 +133,10 @@ export default function Navbar() {
               Reserve Now
             </Link>
             <a
-              href={`tel:${contact.phoneRaw}`}
+              href={`tel:${content.phone_raw}`}
               className="mt-4 text-center text-sm font-sans font-light text-charcoal-400"
             >
-              {contact.phone}
+              {content.phone}
             </a>
           </div>
         </div>

@@ -4,6 +4,7 @@ import {
   type LucideIcon,
 } from 'lucide-react';
 import hotelConfig from '@/config/hotelConfig';
+import { usePublicFacilities } from '@/lib/useFacilities';
 import Reveal from '@/components/Reveal';
 import SectionHeading from '@/components/SectionHeading';
 
@@ -13,7 +14,8 @@ const iconMap: Record<string, LucideIcon> = {
 };
 
 export default function Facilities() {
-  const { facilities, sections } = hotelConfig;
+  const { sections } = hotelConfig;
+  const { facilities } = usePublicFacilities();
 
   return (
     <section id="facilities" className="py-28 md:py-36 bg-ivory-100">
@@ -31,7 +33,7 @@ export default function Facilities() {
             const Icon = iconMap[facility.icon] || Sparkles;
             return (
               <Reveal
-                key={facility.title}
+                key={facility.id}
                 delay={((idx % 3) + 1) as 1 | 2 | 3}
               >
                 <div className="group h-full bg-white rounded-sm p-10 hover:shadow-[0_12px_50px_rgba(0,0,0,0.06)] transition-all duration-700 border border-ivory-200 hover:border-gold-200">

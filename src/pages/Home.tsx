@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import hotelConfig from '@/config/hotelConfig';
+import { useSiteContent } from '@/lib/useSiteContent';
 import Hero from '@/components/Hero';
 import HomeIntro from '@/components/HomeIntro';
 import FeaturedRooms from '@/components/FeaturedRooms';
@@ -10,7 +11,8 @@ import Reveal from '@/components/Reveal';
 import SectionHeading from '@/components/SectionHeading';
 
 export default function Home() {
-  const { gallery, testimonials, sections, name } = hotelConfig;
+  const { gallery, testimonials, sections } = hotelConfig;
+  const { content } = useSiteContent();
   const previewGallery = gallery.slice(0, 6);
 
   return (
@@ -29,7 +31,7 @@ export default function Home() {
             <SectionHeading
               eyebrow={sections.gallery.eyebrow}
               title={sections.gallery.title!}
-              subtitle={(sections.gallery.subtitle || '').replace('{hotelName}', name)}
+              subtitle={(sections.gallery.subtitle || '').replace('{hotelName}', content.hotel_name)}
             />
           </Reveal>
           <Reveal delay={2}>
@@ -74,7 +76,7 @@ export default function Home() {
             <SectionHeading
               eyebrow={sections.ctaBanner.eyebrow}
               title={sections.ctaBanner.title!}
-              subtitle={(sections.ctaBanner.subtitle || '').replace('{hotelName}', name)}
+              subtitle={(sections.ctaBanner.subtitle || '').replace('{hotelName}', content.hotel_name)}
               light
             />
           </Reveal>

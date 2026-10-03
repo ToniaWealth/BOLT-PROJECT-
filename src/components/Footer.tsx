@@ -16,6 +16,7 @@ import {
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import hotelConfig from '@/config/hotelConfig';
+import { useSiteContent } from '@/lib/useSiteContent';
 
 const iconMap: Record<string, LucideIcon> = {
   Instagram,
@@ -31,7 +32,8 @@ const iconMap: Record<string, LucideIcon> = {
 };
 
 export default function Footer() {
-  const { name, logoText, logoSubtext, contact, social, navLinks, tagline } = hotelConfig;
+  const { social, navLinks } = hotelConfig;
+  const { content } = useSiteContent();
   const year = new Date().getFullYear();
 
   return (
@@ -44,14 +46,14 @@ export default function Footer() {
             <div className="md:col-span-5">
               <div className="flex flex-col leading-none mb-6">
                 <span className="font-serif text-3xl font-light tracking-[0.2em] text-ivory-50">
-                  {logoText}
+                  {content.logo_text}
                 </span>
                 <span className="text-[0.625rem] font-sans font-medium tracking-[0.35em] uppercase mt-2 text-gold-400">
-                  {logoSubtext}
+                  {content.logo_subtext}
                 </span>
               </div>
               <p className="text-base font-sans font-light leading-relaxed max-w-sm">
-                {tagline}
+                {content.tagline}
               </p>
               <div className="mt-8 flex items-center gap-4">
                 {social.map((socialLink) => {
@@ -100,19 +102,19 @@ export default function Footer() {
                 <li className="flex items-start gap-3">
                   <MapPin size={16} className="text-gold-400 mt-0.5 shrink-0" />
                   <span className="text-ivory-200/60 leading-relaxed">
-                    {contact.address.line1}<br />{contact.address.line2}
+                    {content.address_line1}<br />{content.address_line2}
                   </span>
                 </li>
                 <li className="flex items-center gap-3">
                   <Phone size={16} className="text-gold-400 shrink-0" />
-                  <a href={`tel:${contact.phoneRaw}`} className="text-ivory-200/60 hover:text-gold-400 transition-colors">
-                    {contact.phone}
+                  <a href={`tel:${content.phone_raw}`} className="text-ivory-200/60 hover:text-gold-400 transition-colors">
+                    {content.phone}
                   </a>
                 </li>
                 <li className="flex items-center gap-3">
                   <Mail size={16} className="text-gold-400 shrink-0" />
-                  <a href={`mailto:${contact.email}`} className="text-ivory-200/60 hover:text-gold-400 transition-colors break-all">
-                    {contact.email}
+                  <a href={`mailto:${content.email}`} className="text-ivory-200/60 hover:text-gold-400 transition-colors break-all">
+                    {content.email}
                   </a>
                 </li>
               </ul>
@@ -126,7 +128,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="py-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs font-sans font-light">
           <p className="text-ivory-200/40">
-            &copy; {year} {name}. All rights reserved.
+            &copy; {year} {content.hotel_name}. All rights reserved.
           </p>
           <p className="flex items-center gap-6 text-ivory-200/40">
             <a href="#" className="hover:text-gold-400 transition-colors">Privacy Policy</a>

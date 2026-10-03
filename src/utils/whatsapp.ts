@@ -1,24 +1,20 @@
 import hotelConfig from '@/config/hotelConfig';
 
-function getOrdinal(n: number): string {
-  const s = ['th', 'st', 'nd', 'rd'];
-  const v = n % 100;
-  return s[(v - 20) % 10] || s[v] || s[0];
+let dynamicWhatsappNumber: string | null = null;
+
+export function setDynamicWhatsappNumber(num: string | null) {
+  dynamicWhatsappNumber = num;
 }
 
-function formatDateWithOrdinal(dateStr: string): string {
-  if (!dateStr) return '';
-  const d = new Date(dateStr);
-  const month = d.toLocaleDateString('en-US', { month: 'long' });
-  const day = d.getDate();
-  return `${month} ${day}${getOrdinal(day)}`;
+function getWhatsappNumber(): string {
+  return dynamicWhatsappNumber || hotelConfig.contact.whatsappNumber;
 }
 
-export function buildRoomInquiryMessage(roomName: string): string {
+function buildRoomInquiryMessage(roomName: string): string {
   return hotelConfig.whatsapp.roomInquiryTemplate.replace('{roomName}', roomName);
 }
 
-export function buildBookingMessage(
+function buildBookingMessage(
   roomName: string,
   checkIn: string,
   checkOut: string,
@@ -40,13 +36,33 @@ export function buildBookingMessage(
     .replace('{guests}', guestsStr);
 }
 
-export function buildGeneralInquiryMessage(): string {
+function buildGeneralInquiryMessage(): string {
   return hotelConfig.whatsapp.generalInquiryMessage;
 }
 
-export function buildWhatsAppUrl(message: string): string {
-  return `https://wa.me/${hotelConfig.contact.whatsappNumber}?text=${encodeURIComponent(message)}`;
+function formatDateWithOrdinal(dateStr: string): string {
+  if (!dateStr) return '';
+  const d = new Date(dateStr);
+  const month = d.toLocaleDateString('en-US', { month: 'long' });
+  const day = d.getDate();
+  return `${month} ${day}${getOrdinal(day)}`;
 }
+
+function getOrdinal(n: number): string {
+  const s = ['th', 'st', 'nd', 'rd'];
+  const v = n % 100;
+  return s[(v - 20) % 10] || s[v] || s[0];
+}
+
+export function buildWhatsAppUrl(message: string): string {
+  return `https://wa.me/${getWhatsappNumber()}?text=${encodeURIComponent(message)}`;
+}
+
+export {
+  buildRoomInquiryMessage,
+  buildBookingMessage,
+  buildGeneralInquiryMessage,
+};
 
 export function formatPrice(price: number): string {
   const { currencySymbol } = hotelConfig.theme;

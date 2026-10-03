@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { X } from 'lucide-react';
 import hotelConfig from '@/config/hotelConfig';
+import { useSiteContent } from '@/lib/useSiteContent';
 import PageHero from '@/components/PageHero';
 import About from '@/components/About';
 import Facilities from '@/components/Facilities';
@@ -11,16 +12,17 @@ import Reveal from '@/components/Reveal';
 import SectionHeading from '@/components/SectionHeading';
 
 export default function AboutPage() {
-  const { gallery, hero, about, testimonials, sections, name } = hotelConfig;
+  const { gallery, testimonials, sections } = hotelConfig;
+  const { content } = useSiteContent();
   const [lightbox, setLightbox] = useState<string | null>(null);
 
   return (
     <>
       <PageHero
         eyebrow={sections.about.eyebrow}
-        title={about.title}
+        title={content.about_title}
         subtitle="Where architecture, nature, and a philosophy of stillness converge."
-        image={about.image}
+        image={content.about_image}
       />
 
       <About />
@@ -34,7 +36,7 @@ export default function AboutPage() {
             <SectionHeading
               eyebrow={sections.gallery.eyebrow}
               title={sections.gallery.title!}
-              subtitle={(sections.gallery.subtitle || '').replace('{hotelName}', name)}
+              subtitle={(sections.gallery.subtitle || '').replace('{hotelName}', content.hotel_name)}
             />
           </Reveal>
           <Reveal delay={2}>

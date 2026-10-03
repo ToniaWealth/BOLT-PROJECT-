@@ -475,6 +475,7 @@ export const hotelConfig = {
     { label: "Home", href: "/" },
     { label: "Rooms", href: "/rooms" },
     { label: "About", href: "/about" },
+    { label: "Blog", href: "/blog" },
     { label: "Contact", href: "/contact" },
   ],
 };
